@@ -28,8 +28,14 @@ option (COMPILE_EXE "Whether to compile and generate exe or not" ON)
 option (ENABLE_WARNINGS "Enable warnings" ON)
 option (ENABLE_WARNINGS_AS_ERRORS "Enable warnings as error" ON)
 
+option (ENABLE_LTO "Enable LTO" ON)
+
 if (ENABLE_WARNINGS)
   include (warnings)
+endif ()
+
+if (ENABLE_LTO)
+  include (LTO)
 endif ()
 
 # including submodule from cmake folder

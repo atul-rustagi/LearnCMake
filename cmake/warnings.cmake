@@ -5,7 +5,7 @@
 #              => ENABLED_AS_ERRORS (if we want to treat warnings as an error)
 function (target_set_warnings TARGET ENABLE ENABLED_AS_ERRORS)
 
-    message ("Target: ${TARGET}, Enable: ${ENABLE}, Treat warnings as errors: ${ENABLED_AS_ERRORS}")
+    message ("Target: ${TARGET}, Warnings enable: ${ENABLE}, Treat warnings as errors: ${ENABLED_AS_ERRORS}")
 
     # if user don't want to set warnings, show below message
     if (Not ${ENABLED})

@@ -23,3 +23,9 @@ if (${ENABLE_WARNINGS})
     target_set_warnings (${EXE_NAME} ${ENABLE_WARNINGS} ${ENABLE_WARNINGS_AS_ERRORS})
 
 endif ()
+
+if (${ENABLE_LTO})
+
+    target_enable_lto (${EXE_NAME} ${ENABLE_LTO})
+
+endif ()
