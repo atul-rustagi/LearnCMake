@@ -10,6 +10,10 @@ set (
 add_executable (${EXE_NAME} ${EXE_SOURCES})
 
 # used to link library with the executable
-target_link_libraries (${EXE_NAME} PUBLIC ${LIB_NAME})
+target_link_libraries (
+    ${EXE_NAME} PUBLIC
+    ${LIB_NAME}
+    nlohmann_json   # name of external library
+)
 
 add_subdirectory (sample_lib)

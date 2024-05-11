@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "nlohmann/json.hpp"
+
 #include "configs.hpp"
 #include "lib.hpp"
 
@@ -13,6 +15,9 @@ int main ()
     printf ("\tMinor ver: %d\n", gMinorVersion);
     printf ("\tPatch ver: %d\n", gPatchVersion);
     printf ("\tTweak ver: %d\n\n", gTweakVersion);
+
+    printf ("\tNlohmann JSON Lib Version: %d.%d.%d\n\n",
+            NLOHMANN_JSON_VERSION_MAJOR, NLOHMANN_JSON_VERSION_MINOR, NLOHMANN_JSON_VERSION_PATCH);
 
     LibFunc ();
 

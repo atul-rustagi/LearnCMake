@@ -10,6 +10,7 @@ set (
 add_library (${LIB_NAME} STATIC ${LIB_SOURCES})
 
 # used to set the include directories folder (where we are having hpp files)
+#   binary path => CMAKE_BINARY_DIR
 target_include_directories (
     ${LIB_NAME} PUBLIC
     "..\\..\\include"

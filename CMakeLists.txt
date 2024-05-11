@@ -17,6 +17,15 @@ set (CMAKE_CXX_EXTENSIONS         OFF)
 set (EXE_NAME "hello_world")
 set (LIB_NAME "libfuncs")
 
+# setting path where all cmake submodules are present
+set (CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}\\cmake")
+
+# including submodule from cmake folder
+include (git_submodule)
+
+# calling the function added in submodule
+add_git_submodule (xlibs\\json)
+
 # option is also used to declare variables and their value can by ON/OFF only, we can also give hint
 # such variables can be used in if-else conditions
 option (COMPILE_EXE "Whether to compile and generate exe or not" ON)
@@ -24,8 +33,9 @@ option (COMPILE_EXE "Whether to compile and generate exe or not" ON)
 # if statement takes an option variable
 if (COMPILE_EXE)
   # used to declare subdirectories where other cmake files are present
-  add_subdirectory (src)
   add_subdirectory (configs)
+  add_subdirectory (xlibs)
+  add_subdirectory (src)
   
   # we can display message using message
   message ("cmake build successful")
@@ -61,4 +71,7 @@ more commands:
     4. cmake -DMY_OPTION=[ON|OFF] ..
 
        => used to pass option values from command line
+
+others:
+    1. file and folder names and their paths can be written with and without double quotes
 ]]
