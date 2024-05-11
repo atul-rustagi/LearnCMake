@@ -20,16 +20,24 @@ set (LIB_NAME "libfuncs")
 # setting path where all cmake submodules are present
 set (CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}\\cmake")
 
+# option is also used to declare variables and their value can by ON/OFF only, we can also give hint
+# such variables can be used in if-else conditions
+option (COMPILE_EXE "Whether to compile and generate exe or not" ON)
+
+# when changed below configs, delete the build folder to reflect changes
+option (ENABLE_WARNINGS "Enable warnings" ON)
+option (ENABLE_WARNINGS_AS_ERRORS "Enable warnings as error" ON)
+
+if (ENABLE_WARNINGS)
+  include (warnings)
+endif ()
+
 # including submodule from cmake folder
 include (git_submodule)
 include (docs)
 
 # calling the function added in submodule
 add_git_submodule (xlibs\\json)
-
-# option is also used to declare variables and their value can by ON/OFF only, we can also give hint
-# such variables can be used in if-else conditions
-option (COMPILE_EXE "Whether to compile and generate exe or not" ON)
 
 # if statement takes an option variable
 if (COMPILE_EXE)
@@ -43,6 +51,29 @@ if (COMPILE_EXE)
 else ()
   # else block body
 endif ()
+
+#[[
+Different Linking Types:
+
+    - consider following linking to understand linking types
+
+        target_link_libraries (A Public B)
+        target_link_libraries (A Private C)
+
+        target_link_libraries (D Public/Private A)
+
+1. Public
+    - When A links B as public, it says that A uses B in its implementation and B is also used in A's public API
+    - hence D can use B since it is a part of the public API of A
+
+2. Private
+    - When A links C as private, it says that A uses C in its implementation but C is not used in any part of A's public API
+    - hence D cannot use C since it is not a part of the public API of A
+
+3. Interface
+    - In general it is used only for header-only libraries
+
+]]
 
 #[[
 basic steps:

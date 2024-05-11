@@ -16,3 +16,9 @@ target_include_directories (
     "..\\..\\include"
     "${CMAKE_BINARY_DIR}\\configured_files\\include"
 )
+
+if (${ENABLE_WARNINGS})
+
+    target_set_warnings (${LIB_NAME} ${ENABLE_WARNINGS} ${ENABLE_WARNINGS_AS_ERRORS})
+
+endif ()

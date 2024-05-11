@@ -17,3 +17,9 @@ target_link_libraries (
 )
 
 add_subdirectory (sample_lib)
+
+if (${ENABLE_WARNINGS})
+
+    target_set_warnings (${EXE_NAME} ${ENABLE_WARNINGS} ${ENABLE_WARNINGS_AS_ERRORS})
+
+endif ()
