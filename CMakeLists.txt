@@ -75,4 +75,10 @@ more commands:
 
 others:
     1. file and folder names and their paths can be written with and without double quotes
+
+Videos skipped/not practiced:
+- Video 23,28   - Dependency Graph
+- Video 24      - Fetch Content
+- Video 26-27   - Unit testing using external libraries
+
 ]]
