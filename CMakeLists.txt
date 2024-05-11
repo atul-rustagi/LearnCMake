@@ -111,5 +111,5 @@ Videos skipped/not practiced:
 - Video 23,28   - Dependency Graph
 - Video 24      - Fetch Content
 - Video 26-27   - Unit testing using external libraries
-
+- Video 31      - Sanitizers (not much options for MSVC)
 ]]
