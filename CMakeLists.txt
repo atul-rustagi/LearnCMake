@@ -22,6 +22,7 @@ set (CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}\\cmake")
 
 # including submodule from cmake folder
 include (git_submodule)
+include (docs)
 
 # calling the function added in submodule
 add_git_submodule (xlibs\\json)
