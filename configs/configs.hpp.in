@@ -1,0 +1,15 @@
+#ifndef CONFIGS_HPP
+#define CONFIGS_HPP
+
+ // @VAR_NAME@ will get replaced with their values
+ // many variables are predefined in build\\CMakeCache.txt file
+
+constexpr const char * gProjectName = "@PROJECT_NAME@";
+constexpr const char * gProjectVersion = "@PROJECT_VERSION@";
+
+const int gMajorVersion = @PROJECT_VERSION_MAJOR@;
+const int gMinorVersion = @PROJECT_VERSION_MINOR@;
+const int gPatchVersion = @PROJECT_VERSION_PATCH@;
+const int gTweakVersion = @PROJECT_VERSION_TWEAK@;
+
+#endif
